@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .hero {
+        background-image: url("assets/images/hotel.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .navbar-custom {
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero bg-primary text-white py-5">
+      <div
+        class="card shadow text-white p-4 navbar-custom"
+        style="width: 100%; max-width: 400px"
+      >
+        <h3 class="text-center mb-4">Login</h3>
+        <form>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Enter your password"
+            />
+          </div>
+          <button
+            type="button"
+            onclick="handleLogin()"
+            class="btn btn-primary w-100 my-4"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </section>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/loginHandle.js"></script>
+  </body>
+</html>

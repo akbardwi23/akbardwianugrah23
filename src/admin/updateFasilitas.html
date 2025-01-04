@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Tambah Data Kamar</title>
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .hero {
+        background-image: url("../../assets/images/hotel.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .navbar-custom {
+        background-color: rgba(0, 0, 0, 1);
+        backdrop-filter: blur(5px);
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark navbar-custom"
+      style="z-index: 10"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">Hotel Ikarus</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="updateKamar.html">Update Kamar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="updateFasilitas.html"
+                >Update Fasilitas</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dataPemesanan.html">Data Pemesanan</a>
+            </li>
+            <!-- Login Button -->
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-light bg-light text-dark"
+                href="../../index.html"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="content mx-5">
+      <h2 class="my-2">Update Fasilitas</h2>
+      <button type="button" class="btn btn-primary my-3">Tambah Data</button>
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Jenis Fasilitas</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Kolam Renang</td>
+            <td>Fasilitas tambahan berupa Kolam Renang bagi Pengunjung</td>
+            <td class="d-flex justify-content-end gap-3">
+              <button type="button" class="btn btn-success">Edit</button>
+              <button type="button" class="btn btn-danger">Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>SPA</td>
+            <td>Fasilitas SPA yang memanjakan tubuh disaat lelah</td>
+            <td class="d-flex justify-content-end gap-3">
+              <button type="button" class="btn btn-success">Edit</button>
+              <button type="button" class="btn btn-danger">Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>GYM</td>
+            <td>Fasilitas pusat kebugaran</td>
+            <td class="d-flex justify-content-end gap-3">
+              <button type="button" class="btn btn-success">Edit</button>
+              <button type="button" class="btn btn-danger">Hapus</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

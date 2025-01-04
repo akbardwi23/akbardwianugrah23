@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pemesanan</title>
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      html {
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+      }
+      .form-container {
+        max-width: 600px;
+        background-color: #d1e0ed;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 50px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .form-label {
+        font-weight: bold;
+      }
+      .custom-bg-image {
+        background-image: url("../../assets/images/hotel.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+      }
+      .navbar-custom,
+      .custom-bg {
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+      }
+      .custom-bg:focus {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+      }
+      .m-custom {
+        margin-top: 80px;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="custom-bg-image">
+    <nav
+      class="navbar navbar-expand-lg top-0 navbar-dark navbar-custom position-fixed w-100"
+      style="z-index: 10"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">Hotel Ikarus</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../kamar.html">Kamar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../fasilitas.html">Fasilitas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Pesan</a>
+            </li>
+            <!-- Login Button -->
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-light bg-light text-dark"
+                href="../../index.html"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="form-container custom-bg text-white m-custom"
+      id="formPemesanan"
+    >
+      <h4 class="text-center mb-4">Form Pemesanan</h4>
+      <form>
+        <div class="d-flex justify-content-between gap-3">
+          <div class="w-50">
+            <div class="mb-3">
+              <label for="idPemesanan" class="form-label">Id Pemesanan:</label>
+              <input
+                type="number"
+                class="form-control custom-bg text-white"
+                id="idPemesanan"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="namaPemesan" class="form-label">Nama Pemesan:</label>
+              <input
+                type="text"
+                class="form-control custom-bg text-white"
+                id="namaPemesan"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Jenis Kelamin:</label>
+              <div class="d-flex gap-3">
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input custom-bg text-white"
+                    name="gender"
+                    value="Laki-Laki"
+                    id="jenisKelaminLaki"
+                  />
+                  <label for="jenisKelaminLaki" class="form-check-label"
+                    >Laki-laki</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input custom-bg text-white"
+                    name="gender"
+                    value="Perempuan"
+                    id="jenisKelaminPerempuan"
+                  />
+                  <label for="jenisKelaminPerempuan" class="form-check-label"
+                    >Perempuan</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="nomorIdentitas" class="form-label"
+                >Nomor Identitas:</label
+              >
+              <input
+                type="number"
+                class="form-control custom-bg text-white"
+                id="nomorIdentitas"
+                oninput="validateNomorIdentitas()"
+              />
+              <p id="nomorIdentitasMessage" style="color: red" class="hidden">
+                Isian Salah, harus 16 digit
+              </p>
+            </div>
+          </div>
+          <div class="w-50">
+            <div class="mb-3">
+              <label for="tipeKamar" class="form-label">Tipe Kamar:</label>
+              <select
+                onchange="handleChange()"
+                class="form-select custom-bg text-white"
+                id="tipeKamar"
+              >
+                <option selected>--Pilih--</option>
+                <option value="standar">STANDAR</option>
+                <option value="deluxe">DELUXE</option>
+                <option value="family">FAMILY</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="harga" class="form-label">Harga:</label>
+              <input
+                type="number"
+                class="form-control custom-bg text-white"
+                id="harga"
+                readonly
+              />
+            </div>
+            <div class="mb-3">
+              <label for="tanggalPesan" class="form-label"
+                >Tanggal Pesan:</label
+              >
+              <input
+                type="date"
+                class="form-control custom-bg text-white"
+                id="tanggalPesan"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="durasiMenginap" class="form-label"
+                >Durasi Menginap:</label
+              >
+              <div class="input-group">
+                <input
+                  oninput="handleDurasiMenginap()"
+                  type="number"
+                  class="form-control custom-bg text-white"
+                  id="durasiMenginap"
+                />
+                <span class="input-group-text custom-bg text-white">Hari</span>
+              </div>
+            </div>
+            <div class="mb-3 form-check">
+              <input
+                oninput="handleBreakfast()"
+                type="checkbox"
+                class="form-check-input custom-bg text-white"
+                id="termasukBreakfast"
+              />
+              <label for="termasukBreakfast" class="form-check-label"
+                >Termasuk Breakfast</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="totalBayar" class="form-label">Total Bayar:</label>
+          <input
+            type="number"
+            class="form-control custom-bg text-white"
+            id="totalBayar"
+            readonly
+          />
+        </div>
+        <div class="d-flex justify-content-center">
+          <button
+            type="button"
+            class="btn btn-primary me-2"
+            id="btn1"
+            onclick="handleClick()"
+          >
+            Simpan
+          </button>
+          <button type="reset" class="btn btn-warning">Batal</button>
+        </div>
+      </form>
+    </div>
+
+    <div
+      class="resume-container w-50 mx-auto m-custom p-4 custom-bg text-white rounded hidden"
+      id="resumePemesanan"
+    ></div>
+
+    <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .hero {
+        background-image: url("../assets/images/hotel.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .navbar-custom {
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark navbar-custom position-fixed w-100"
+      style="z-index: 10"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">Hotel Ikarus</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="kamar.html">Kamar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fasilitas.html">Fasilitas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="formPemesanan/index.html">Pesan</a>
+            </li>
+            <!-- Login Button -->
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-light bg-light text-dark"
+                href="../index.html"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="hero bg-primary text-white py-5 d-flex flex-wrap justify-content-center gap-3"
+    >
+      <div class="card navbar-custom" style="width: 18rem">
+        <img
+          src="../assets/images/kamar hotel 1.jpg"
+          class="card-img-top"
+          alt="room1"
+        />
+        <div class="card-body">
+          <h5 class="card-title text-white">Standar</h5>
+          <p class="card-text text-white">
+            Kamar hotel yang paling basic dan terjangkau.
+          </p>
+          <a href="#" class="btn btn-primary">Pesan Sekarang</a>
+        </div>
+      </div>
+      <div class="card navbar-custom" style="width: 18rem">
+        <img
+          src="../assets/images/kamar hotel 2.jpg"
+          class="card-img-top"
+          alt="room1"
+        />
+        <div class="card-body">
+          <h5 class="card-title text-white">Deluxe</h5>
+          <p class="card-text text-white">
+            Ukuran lebih besar daripada kamar standar.
+          </p>
+          <a href="#" class="btn btn-primary">Pesan Sekarang</a>
+        </div>
+      </div>
+      <div class="card navbar-custom" style="width: 18rem">
+        <img
+          src="../assets/images/kamar hotel 3.jpg"
+          class="card-img-top"
+          alt="room1"
+        />
+        <div class="card-body">
+          <h5 class="card-title text-white">Family</h5>
+          <p class="card-text text-white">
+            Dirancang khusus untuk keluarga dengan ukuran lebih besar.
+          </p>
+          <a href="#" class="btn btn-primary">Pesan Sekarang</a>
+        </div>
+      </div>
+    </section>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
